@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from io import BytesIO
-import docx2txt, pdfplumber, re, os, docx, PyPDF2, spacy, nltk
+import docx2txt, pdfplumber, re, os, PyPDF2, spacy, nltk
 # load pre-trained model
 nlp = spacy.load('en_core_web_sm')
 from nltk.tokenize import RegexpTokenizer
@@ -79,7 +79,7 @@ def getText(filename):
     # Create empty string 
     fullText = ''
     if filename.endswith('.docx'):
-        doc = docx.Document(filename)
+        doc = docx2txt.process(filename)
         
         for para in doc.paragraphs:
             fullText = fullText + para.text
@@ -104,7 +104,7 @@ def getText(filename):
         # Append the source document to the end of the destination document.
         output.append_document(input, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
         output.save("Output.docx");
-        doc = docx.Document('Output.docx')
+        doc = docx2txt.process('Output.docx')
         
         for para in doc.paragraphs:
             fullText = fullText + para.text
@@ -133,7 +133,7 @@ def display(doc_file):
         # Append the source document to the end of the destination document.
         output.append_document(inputs, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
         output.save("Output.docx");
-        doc = docx.Document('Output.docx')
+        doc = docx2txt.process.process('Output.docx')
         
         for para in doc.paragraphs:
             fullText = fullText + para.text
