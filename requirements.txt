@@ -1,0 +1,13 @@
+aspose-cells==22.7.0
+aspose-words==22.7.0
+docx==0.2.4
+docx2txt==0.8
+matplotlib-venn==0.11.7
+nltk==3.4.5
+pandas==1.4.3
+pandas-visual-analysis==0.0.4
+pdfplumber==0.7.4
+pickle4==0.0.1
+PyPDF2==2.10.4
+spacy==3.0.8
+streamlit==1.12.0
