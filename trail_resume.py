@@ -24,9 +24,9 @@ nltk.download('words')
 nltk.download('wordnet')
 nltk.download('stopwords')
 
-mfile = BytesIO(requests.get('https://github.com/MoinDalvs/Resume_Classification/blob/working_branch/model.sav?raw=true').content)
+mfile = BytesIO(requests.get('https://github.com/MoinDalvs/Resume_Classification/blob/main/model.sav?raw=true').content)
 model = load(mfile)
-mfile1 = BytesIO(requests.get('https://github.com/MoinDalvs/Resume_Classification/blob/working_branch/model_id.pkl?raw=true').content)
+mfile1 = BytesIO(requests.get('https://github.com/MoinDalvs/Resume_Classification/blob/main/model_id.pkl?raw=true').content)
 model1 = load(mfile1)
 
 def add_bg_image():
@@ -53,7 +53,7 @@ def extract_skills(resume_text):
     tokens = [token.text for token in nlp_text if not token.is_stop]
             
     # reading the csv file
-    data = pd.read_csv("https://raw.githubusercontent.com/MoinDalvs/Resume_Classification/working_branch/skills.csv") 
+    data = pd.read_csv("https://raw.githubusercontent.com/MoinDalvs/Resume_Classification/main/skills.csv") 
             
     # extract values
     skills = list(data.columns.values)
