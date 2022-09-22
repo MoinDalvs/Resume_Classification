@@ -168,7 +168,9 @@ def main():
     experience = []
     skills = []
     
-    upload_file = st.file_uploader('Hey,Upload Your Resume ',
+    st.subheader(f'*Note Classifies only for Workday, Peoplesoft, React JS and SQL Developer Resumes')
+
+    upload_file = st.file_uploader('Hey,Upload Your Resumes ',
                                 type= ['docx','pdf'],accept_multiple_files=True)
 
     for doc_file in upload_file:
