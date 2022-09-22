@@ -192,6 +192,7 @@ def main():
 
     st.subheader("About") 
     st.info("This project is a part of AiVariant Internship")
+    st.markdown('<img align="right" alt="code"  height="500" width="300" src = "https://reason.agency/assets/img/scroll-b.gif">',, unsafe_allow_html=True)
 
 if __name__ == '__main__':
      main()
