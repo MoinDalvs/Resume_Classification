@@ -87,14 +87,14 @@ def getText(filename):
       
     # Create empty string 
     fullText = ''
-    if filename.endswith('.docx'):
+    if filename.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         doc = docx2txt.process(filename)
         
         for para in doc.paragraphs:
             fullText = fullText + para.text
             
            
-    elif filename.endswith('.pdf'):  
+    else:  
         with open(filename, "rb") as pdf_file:
             pdoc = PyPDF2.PdfFileReader(filename)
             number_of_pages = pdoc.getNumPages()
@@ -104,49 +104,47 @@ def getText(filename):
         for paragraph in page_content:
             fullText =  fullText + paragraph
             
-    else:
-        import aspose.words as aw
-        output = aw.Document()
-        # Remove all content from the destination document before appending.
-        output.remove_all_children()
-        input = aw.Document(filename)
-        # Append the source document to the end of the destination document.
-        output.append_document(input, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
-        output.save("Output.docx");
-        doc = docx2txt.process('Output.docx')
+    # else:
+    #     import aspose.words as aw
+    #     output = aw.Document()
+    #     # Remove all content from the destination document before appending.
+    #     output.remove_all_children()
+    #     input = aw.Document(filename)
+    #     # Append the source document to the end of the destination document.
+    #     output.append_document(input, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
+    #     output.save("Output.docx");
+    #     doc = docx2txt.process('Output.docx')
         
-        for para in doc.paragraphs:
-            fullText = fullText + para.text
-        fullText = fullText[79:]
+    #     for para in doc.paragraphs:
+    #         fullText = fullText + para.text
+    #     fullText = fullText[79:]
          
     return (fullText)
 
 def display(doc_file):
-
-    
     resume = []
-    if doc_file.endswith('.docx'):
+    if doc_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         resume.append(docx2txt.process(doc_file))
 
-    elif doc_file.endswith('.pdf'):
+    else:
         with pdfplumber.open(doc_file) as pdf:
             pages=pdf.pages[0]
             resume.append(pages.extract_text())
 
-    else:
-        fullText = ''
-        output = aw.Document()
-        # Remove all content from the destination document before appending.
-        output.remove_all_children()
-        inputs = aw.Document(doc_file)
-        # Append the source document to the end of the destination document.
-        output.append_document(inputs, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
-        output.save("Output.docx");
-        doc = docx2txt.process.process('Output.docx')
+    # else:
+    #     fullText = ''
+    #     output = aw.Document()
+    #     # Remove all content from the destination document before appending.
+    #     output.remove_all_children()
+    #     inputs = aw.Document(doc_file)
+    #     # Append the source document to the end of the destination document.
+    #     output.append_document(inputs, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
+    #     output.save("Output.docx");
+    #     doc = docx2txt.process.process('Output.docx')
         
-        for para in doc.paragraphs:
-            fullText = fullText + para.text
-        resume.append(fullText[79:])
+    #     for para in doc.paragraphs:
+    #         fullText = fullText + para.text
+    #     resume.append(fullText[79:])
             
     return resume
 
@@ -199,27 +197,19 @@ def main():
     experience = []
     skills = []
     
-    # following lines create boxes in which user can enter the absolute directory 
+    upload_file = st.file_uploader('Hey,Upload Your Resume ',
+                                type= ['docx','pdf'],accept_multiple_files=True)
 
-    with st.form(key="form1"):
-        st.warning(body="Supported file Formats: '.docx' or '.doc' or '.pdf'")
-        folder_pathe=st.text_input(label= "Enter the absolute folder path below in the box")
-        st.markdown("Eg.  C:\\Users\\Admin\\Documents\\foldername consisting resumes")
-        submit = st.form_submit_button(label="Click Me!")                           
-
-        if submit:
-
-            for files in os.listdir(folder_pathe):
-                if files.endswith('.docx') or files.endswith('.doc') or files.endswith('.pdf'):
-                    file_pathe  = os.path.join(folder_pathe, files)
-                    filename.append(files)
-                    cleaned=preprocess(display(file_pathe))
-                    prediction = model.predict(model1.transform([cleaned]))[0]
-                    predicted.append(target.get(prediction))
-                    extText = getText(file_pathe)
-                    exp = expDetails(extText)
-                    experience.append(exp)
-                    skills.append(extract_skills(extText))
+    for doc_file in upload_file:
+            if doc_file is not None:
+                filename.append(doc_file.name)
+                cleaned=preprocess(display(doc_file))
+                prediction = model.predict(model1.transform([cleaned]))[0]
+                predicted.append(target.get(prediction))
+                extText = getText(doc_file)
+                exp = expDetails(extText)
+                experience.append(exp)
+                skills.append(extract_skills(extText))
     if len(predicted) > 0:
         file_type['Uploaded File'] = filename
         file_type['Experience'] = experience
