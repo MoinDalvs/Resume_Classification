@@ -2,7 +2,7 @@
 
 ### **`Business Objective:`** The document classification solution should significantly reduce the manual human effort in the HRM. It should achieve a higher level of accuracy and automation with minimal human intervention
 
-
+<img align="center" alt="code"  height="422" width="800" src = "https://user-images.githubusercontent.com/99672298/191675777-55a91042-7102-4c1d-be20-fbf744f9029f.gif">
 
 ### </br>This project is part of Data Science internship at [AiVariant](https://aivariant.com/)
 
