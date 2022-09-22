@@ -91,7 +91,7 @@ def getText(filename):
     if filename.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         doc = docx2txt.process(filename)
         
-        for para in doc.paragraphs:
+        for para in doc:
             fullText = fullText + para.text
             
            
@@ -104,21 +104,6 @@ def getText(filename):
              
         for paragraph in page_content:
             fullText =  fullText + paragraph
-            
-    # else:
-    #     import aspose.words as aw
-    #     output = aw.Document()
-    #     # Remove all content from the destination document before appending.
-    #     output.remove_all_children()
-    #     input = aw.Document(filename)
-    #     # Append the source document to the end of the destination document.
-    #     output.append_document(input, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
-    #     output.save("Output.docx");
-    #     doc = docx2txt.process('Output.docx')
-        
-    #     for para in doc.paragraphs:
-    #         fullText = fullText + para.text
-    #     fullText = fullText[79:]
          
     return (fullText)
 
@@ -131,21 +116,6 @@ def display(doc_file):
         with pdfplumber.open(doc_file) as pdf:
             pages=pdf.pages[0]
             resume.append(pages.extract_text())
-
-    # else:
-    #     fullText = ''
-    #     output = aw.Document()
-    #     # Remove all content from the destination document before appending.
-    #     output.remove_all_children()
-    #     inputs = aw.Document(doc_file)
-    #     # Append the source document to the end of the destination document.
-    #     output.append_document(inputs, aw.ImportFormatMode.KEEP_SOURCE_FORMATTING)
-    #     output.save("Output.docx");
-    #     doc = docx2txt.process.process('Output.docx')
-        
-    #     for para in doc.paragraphs:
-    #         fullText = fullText + para.text
-    #     resume.append(fullText[79:])
             
     return resume
 
