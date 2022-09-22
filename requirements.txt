@@ -9,10 +9,9 @@ nltk
 pandas
 pandas-visual-analysis
 pdfplumber
-pickle4
 PyPDF2
 spacy
 streamlit
 openpyxl
 Pillow
-en_core_web_sm
+en_core_web_sm-3.4.0

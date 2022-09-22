@@ -20,7 +20,6 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot  as plt
 stop=set(stopwords.words('english'))
-from pickle import load
 import aspose.words as aw
 from spacy.matcher import Matcher
 # initialize matcher with a vocab
