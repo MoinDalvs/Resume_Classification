@@ -10,6 +10,7 @@ pandas
 pandas-visual-analysis
 pdfplumber
 PyPDF2
+sklearn
 spacy
 streamlit
 openpyxl
