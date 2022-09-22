@@ -10,7 +10,7 @@ pandas-visual-analysis==0.0.4
 pdfplumber==0.7.4
 pickle4==0.0.1
 PyPDF2==2.10.4
-spacy==3.0.8
+spacy==3.4.1
 streamlit==1.12.0
 typer==0.6.1
 openpyxl==3.0.10
