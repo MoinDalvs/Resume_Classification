@@ -70,5 +70,3 @@ ___
             padding: 0.1em;">
 
 **<h2>♡ Thank you for taking the time ♡**
-
-
