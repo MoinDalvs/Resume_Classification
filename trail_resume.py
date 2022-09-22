@@ -193,7 +193,6 @@ def main():
     st.subheader("About") 
     st.info("This project is a part of AiVariant Internship")
     st.sidebar.markdown('#### Project By\n\
-<img align="center" alt="code"  height="180" width="720" src = "https://user-images.githubusercontent.com/99672298/186088252-ef41cefc-cda7-49e8-960d-efbd59d3696c.jpg">\n\
 \
 <table>\
 <tr>\
