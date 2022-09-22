@@ -18,6 +18,7 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 nltk.download('wordnet')
 nltk.download('stopwords')
+nltk.download('omw-1.4')
 # load pre-trained model
 import en_core_web_sm
 nlp = en_core_web_sm.load()
