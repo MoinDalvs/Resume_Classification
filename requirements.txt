@@ -1,5 +1,3 @@
-aspose-cells
-aspose-words
 typer
 click
 docx
