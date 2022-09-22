@@ -14,4 +14,4 @@ spacy
 streamlit
 openpyxl
 Pillow
-en_core_web_sm-3.4.0
+en_core_web_sm==3.4.0
