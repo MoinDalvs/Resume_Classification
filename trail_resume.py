@@ -186,9 +186,9 @@ def main():
         file_type['Experience'] = experience
         file_type['Skills'] = skills
         file_type['Predicted Profile'] = predicted
-        file_type
+        # file_type
         # Custom formatting
-        # st.table(file_type.style.format({'Experience': '{:.1f}'}))
+        st.table(file_type.style.format({'Experience': '{:.1f}'}))
 
     st.subheader("About") 
     st.info("This project is a part of AiVariant Internship")
