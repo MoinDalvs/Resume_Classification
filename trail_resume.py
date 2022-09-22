@@ -92,7 +92,7 @@ def getText(filename):
         doc = docx2txt.process(filename)
         
         for para in doc:
-            fullText = fullText + para.text
+            fullText = fullText + para
             
            
     else:  
