@@ -6,6 +6,7 @@ import click
 import spacy
 import docx2txt
 import pdfplumber
+from pickle import load
 import requests
 import re
 import os
