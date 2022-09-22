@@ -6,6 +6,7 @@ import click
 import spacy
 import docx2txt
 import pdfplumber
+import requests
 import re
 import os
 import PyPDF2
