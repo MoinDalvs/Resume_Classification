@@ -96,7 +96,7 @@ def getText(filename):
             
            
     else:  
-        with open(filename, "rb") as pdf_file:
+        with pdfplumber.open(filename) as pdf_file:
             pdoc = PyPDF2.PdfFileReader(filename)
             number_of_pages = pdoc.getNumPages()
             page = pdoc.pages[0]
