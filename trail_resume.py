@@ -192,7 +192,23 @@ def main():
 
     st.subheader("About") 
     st.info("This project is a part of AiVariant Internship")
-    st.markdown('<img align="right" alt="code"  height="500" width="300" src = "https://reason.agency/assets/img/scroll-b.gif">', unsafe_allow_html=True)
+    st.markdown('<img align="center" alt="code"  height="180" width="720" src = "https://user-images.githubusercontent.com/99672298/186088252-ef41cefc-cda7-49e8-960d-efbd59d3696c.jpg">\
+\
+<table>\
+<tr>\
+<td>\
+     <img src="https://avatars.githubusercontent.com/u/99672298?v=4" width="180"/>\
+     \
+     moindalvs@gmail.com\
+\
+<p align="center">\
+<a href = "https://github.com/MoinDalvs"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>\
+<a href = "https://twitter.com/DalvsHubot"><img src = "https://www.shareicon.net/download/2016/07/06/107115_media.svg" width="36" height="36"/></a>\
+<a href = "https://www.linkedin.com/in/moin-dalvi-277b0214a//"><img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/></a>\
+</p>\
+</td>\
+</tr> \
+  </table>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
      main()
