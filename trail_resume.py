@@ -3,7 +3,13 @@ import numpy as np
 import streamlit as st
 from io import BytesIO
 import click
-import docx2txt, pdfplumber, re, os, PyPDF2, spacy, nltk
+import spacy
+import docx2txt
+import pdfplumber
+import re
+import os
+import PyPDF2
+import nltk
 # load pre-trained model
 nlp = spacy.load('en_core_web_sm')
 from nltk.tokenize import RegexpTokenizer
