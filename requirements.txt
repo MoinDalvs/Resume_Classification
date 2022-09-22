@@ -15,3 +15,4 @@ spacy
 streamlit
 openpyxl
 Pillow
+en_core_web_sm
