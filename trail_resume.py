@@ -17,7 +17,6 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-from wordcloud import WordCloud
 import matplotlib.pyplot  as plt
 stop=set(stopwords.words('english'))
 import aspose.words as aw
