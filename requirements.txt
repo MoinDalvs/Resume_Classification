@@ -1,7 +1,7 @@
 aspose-cells==22.7.0
 aspose-words==22.7.0
 typer==0.6.1
-click==7.1.2
+click==7.1.1
 docx==0.2.4
 docx2txt==0.8
 matplotlib-venn==0.11.7
