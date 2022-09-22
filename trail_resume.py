@@ -11,7 +11,7 @@ import os
 import PyPDF2
 import nltk
 # load pre-trained model
-nlp = spacy.load('en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl')
+nlp = spacy.load('en')
 from nltk.tokenize import RegexpTokenizer
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
