@@ -10,6 +10,12 @@ import re
 import os
 import PyPDF2
 import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('wordnet')
+nltk.download('stopwords')
 # load pre-trained model
 import en_core_web_sm
 nlp = en_core_web_sm.load()
@@ -23,12 +29,7 @@ import aspose.words as aw
 from spacy.matcher import Matcher
 # initialize matcher with a vocab
 matcher = Matcher(nlp.vocab)
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('maxent_ne_chunker')
-# nltk.download('words')
-# nltk.download('wordnet')
-# nltk.download('stopwords')
+
 
 mfile = BytesIO(requests.get('https://github.com/MoinDalvs/Resume_Classification/blob/main/model.sav?raw=true').content)
 model = load(mfile)
