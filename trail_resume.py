@@ -190,7 +190,7 @@ def main():
         # Custom formatting
         st.table(file_type.style.format({'Experience': '{:.1f}'}))
 
-    st.subheader(f'*Note Classifies only for Workday, Peoplesoft, React JS and SQL Developer Resumes')
+    st.write(f'*Note Classifies only for Workday, Peoplesoft, React JS and SQL Developer Resumes')
     st.subheader("About") 
     st.info("This project is a part of AiVariant Internship")
     st.sidebar.markdown('#### Project By\n\
