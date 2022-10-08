@@ -28,7 +28,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import matplotlib.pyplot  as plt
 stop=set(stopwords.words('english'))
-import aspose.words as aw
 from spacy.matcher import Matcher
 # initialize matcher with a vocab
 matcher = Matcher(nlp.vocab)
