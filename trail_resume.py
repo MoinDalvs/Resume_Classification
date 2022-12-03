@@ -10,6 +10,7 @@ from pickle import load
 import requests
 import re
 import os
+import sklearn
 import PyPDF2
 import nltk
 nltk.download('punkt')
