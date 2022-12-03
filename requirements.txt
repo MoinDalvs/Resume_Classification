@@ -8,7 +8,7 @@ pandas
 pandas-visual-analysis
 pdfplumber
 PyPDF2
-sklearn
+scikit-learn
 spacy
 streamlit
 openpyxl
